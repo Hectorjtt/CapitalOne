@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "firebase": "^10.13.1",
+    "mathjs": "^13.1.1"
+  }
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login con Monedas</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="module" src="./js/index.js"></script>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form id="registerForm">
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <input type="text" id="registerName" placeholder="Name">
+                <input type="email" id="registerEmail" placeholder="Email">
+                
+                <!-- Campo de contraseña con ícono de ojo -->
+                <div class="password-container">
+                    <input type="password" id="registerPassword" placeholder="Password">
+                    <i class="fa fa-eye" id="toggleRegisterPassword" style="cursor: pointer;"></i>
+                </div>
+                
+                <button type="submit">Sign Up</button>
+                <!-- Mensaje de feedback -->
+                <div id="signupMessage" class="message"></div>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form id="loginForm">
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email password</span>
+                <input type="email" id="loginEmail" placeholder="Email">
+                
+                <!-- Campo de contraseña con ícono de ojo -->
+                <div class="password-container">
+                    <input type="password" id="loginPassword" placeholder="Password">
+                    <i class="fa fa-eye" id="toggleLoginPassword" style="cursor: pointer;"></i>
+                </div>
+                
+                <a href="#">Forget Your Password?</a>
+                <button type="submit">Sign In</button>
+                <!-- Mensaje de feedback -->
+                <div id="signinMessage" class="message"></div>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, User!</h1>
+                    <p>Register with your personal details to enter to the site</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Configuración básica de Three.js con fondo transparente
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(
+            75, window.innerWidth / window.innerHeight, 0.1, 1000
+        );
+        const renderer = new THREE.WebGLRenderer({ alpha: true }); // Fondo transparente
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Estilos para posicionar el canvas detrás del contenido
+        renderer.domElement.style.position = 'fixed';
+        renderer.domElement.style.top = '0';
+        renderer.domElement.style.left = '0';
+        renderer.domElement.style.width = '100%';
+        renderer.domElement.style.height = '100%';
+        renderer.domElement.style.zIndex = '-1';
+
+        // Iluminación y creación de monedas
+        const light = new THREE.AmbientLight(0xffffff, 1);
+        scene.add(light);
+
+        function createCoin() {
+            const geometry = new THREE.CylinderGeometry(0.5, 0.5, 0.1, 32);
+            const material = new THREE.MeshBasicMaterial({ color: 0xffd700 });
+            const coin = new THREE.Mesh(geometry, material);
+
+            coin.position.x = (Math.random() - 0.5) * 20;
+            coin.position.y = 10;
+            coin.position.z = (Math.random() - 0.5) * 5; // Agregamos variación en Z
+
+            coin.rotation.x = Math.random() * Math.PI;
+            coin.rotation.y = Math.random() * Math.PI;
+
+            scene.add(coin);
+            return coin;
+        }
+
+        const coins = [];
+
+        function updateCoins() {
+            coins.forEach(coin => {
+                coin.position.y -= 0.1; // Velocidad de caída
+
+                if (coin.position.y < -5) {
+                    scene.remove(coin);
+                    coins.splice(coins.indexOf(coin), 1);
+                }
+
+                coin.rotation.x += 0.05;
+                coin.rotation.y += 0.05;
+            });
+        }
+
+        setInterval(() => {
+            const coin = createCoin();
+            coins.push(coin);
+        }, 200); // Aumentamos la frecuencia de aparición
+
+        function animate() {
+            requestAnimationFrame(animate);
+            updateCoins();
+            renderer.render(scene, camera);
+        }
+
+        camera.position.z = 15; // Alejamos un poco la cámara
+
+        animate();
+
+        window.addEventListener('resize', () => {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        });
+    </script>
+    <!-- El script de Three.js permanece igual -->
+    <script src="/js/index.js" type="module"></script>
+</body>
+</html>

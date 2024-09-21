@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - WiseCredit</title>
+    <link rel="stylesheet" href="./css/dashboard.css"> <!-- Asegúrate de enlazar con el archivo CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>WiseCredit</h1>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="./dashboard.html"><i class="fa fa-home"></i> Dashboard</a></li>
+                <li><a href="transactions.html"><i class="fa fa-exchange-alt"></i> Transactions</a></li>
+                <li><a href="card-center.html"><i class="fa fa-credit-card"></i> Card Center</a></li>
+                <li><a href="contacts.html"><i class="fa fa-users"></i> Contacts</a></li>
+                <li><a href="e-wallet-center.html"><i class="fa fa-wallet"></i> E-Wallet Center</a></li>
+                <li><a href="reports.html"><i class="fa fa-chart-bar"></i> Reports</a></li>
+            </ul>
+            <ul class="sidebar-menu">
+                <li><a href="settings.html"><i class="fa fa-cog"></i> Settings</a></li>
+                <li><a href="help-center.html"><i class="fa fa-question-circle"></i> Help Center</a></li>
+            </ul>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <header class="header">
+                <div>
+                    <h2>Welcome to WiseCredit</h2>
+                    <p>Hi, Roberto Martinez. Welcome Back.</p>
+                </div>
+                <div class="header-icons">
+                    <i class="fa fa-moon"></i>
+                    <i class="fa fa-bell"></i>
+                    <img src="user.jpg" alt="User Avatar" class="user-avatar"> <!-- Reemplaza con la ruta correcta de la imagen -->
+                </div>
+            </header>
+
+            <!-- Contenido del dashboard -->
+            <div class="dashboard-content">
+                <!-- Sección de la tarjeta de débito -->
+                <section class="card-section">
+                    <div class="card">
+                        <h3>Debit Card Account</h3>
+                        <!-- Imagen de la tarjeta -->
+                        <div class="debit-card">
+                            <img src="/img/Bbva.png" alt="BBVA Debit Card" class="debit-card-image">
+                        </div>
+                        <div class="button-container">
+                            <button class="add-card-button">Add Debit Card</button>
+                        </div>
+                    </div>
+                    <div class="balance-section">
+                        <h3>Your Total Balance</h3>
+                        <p class="balance-amount">$ 80,201.50</p>
+                        <p>December 21, 2020 • 02:20 PM</p>
+
+                    </div>
+                </section>
+                <!-- Sección de transacciones recientes -->
+                <section class="transactions-section">
+                    <h3>Recent Transactions</h3>
+                    <ul class="transactions-list">
+                        <li class="transaction-item">
+                            <span class="transaction-name">Paypal</span>
+                            <span class="transaction-date">20 December 2020, 08:20 AM</span>
+                            <span class="transaction-amount positive">+ $100</span>
+                        </li>
+                        <li class="transaction-item">
+                            <span class="transaction-name">Spotify</span>
+                            <span class="transaction-date">19 December 2020, 07:25 PM</span>
+                            <span class="transaction-amount negative">- $200</span>
+                        </li>
+                        <li class="transaction-item">
+                            <span class="transaction-name">Netflix</span>
+                            <span class="transaction-date">19 December 2020, 10:15 AM</span>
+                            <span class="transaction-amount positive">+ $500</span>
+                        </li>
+                        <li class="transaction-item">
+                            <span class="transaction-name">H&M</span>
+                            <span class="transaction-date">15 December 2020, 06:30 PM</span>
+                            <span class="transaction-amount negative">- $500</span>
+                        </li>
+                        <li class="transaction-item">
+                            <span class="transaction-name">McDonalds</span>
+                            <span class="transaction-date">2 December 2020, 05:02 AM</span>
+                            <span class="transaction-amount positive">+ $120</span>
+                        </li>
+                        <li class="transaction-item">
+                            <span class="transaction-name">MrLatino</span>
+                            <span class="transaction-date">11 December 2020, 02:10 PM</span>
+                            <span class="transaction-amount negative">- $300</span>
+                        </li>
+                        <li class="transaction-item">
+                            <span class="transaction-name">Oxxo</span>
+                            <span class="transaction-date">09 December 2020, 11:30 AM</span>
+                            <span class="transaction-amount positive">+ $200</span>
+                        </li>
+                        <li class="transaction-item">
+                            <span class="transaction-name">Chilaquiles</span>
+                            <span class="transaction-date">10 December 2020, 04:23 PM</span>
+                            <span class="transaction-amount negative">- $50</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Sección de estadísticas de gastos -->
+                <section class="expenses-section">
+                    <h3>Expenses Instead</h3>
+                    <div class="expenses-chart">
+                        <p>85.5% Normal Level</p>
+                        <p>Total Exp: $1,820.80</p>
+                    </div>
+                </section>
+
+
+                <section class="expenses-section">
+                    <h3>Expenses Instead</h3>
+                    <div class="expenses-chart">
+                        <p>85.5% Normal Level</p>
+                        <p>Total Exp: $1,820.80</p>
+                    </div>
+                </section>
+    
+            </div>
+        </main>
+    </div>
+</body>
+</html>

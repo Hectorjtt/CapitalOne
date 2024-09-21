@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Importar Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./admin.html">Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./main.html">Simulador</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Sign out</a>
+                    </li>
+    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2>Gestionar Taza</h2>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <!-- Eliminé las clases 'btn' y 'btn-primary' de Bootstrap -->
+            <button id="add-tech-btn" class="add-btn">+ Agregar Banco</button>
+        </div>
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th class="text-center align-middle">Imagen</th>
+                    <th class="text-center align-middle">Banco</th>
+                    <th class="text-center align-middle">Comisión Apertura</th>
+                    <th class="text-center align-middle">Tasa de Interés</th>
+                    <th class="text-center align-middle">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="technicians-table">
+                <!-- Aquí se llenarán los técnicos -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal para añadir/editar técnico -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2 id="modal-title">Añadir Banco</h2>
+            <form id="tech-form">
+                <label for="name">Banco:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="phone">Comisión Apertura:</label>
+                <input type="text" id="phone" name="phone" required>
+                <label for="phone2">Tasa de Interés:</label>
+                <input type="text" id="phone2" name="phone2">
+                
+                <!-- Campo de subir archivo -->
+                <label for="file">Subir Logo:</label>
+                <input type="file" id="file" name="file">
+
+                <button type="submit" id="save-tech-btn" class="add-btn">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Importar Bootstrap JS y dependencias -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script.js" type="module"></script>
+    <script src="/js/admin.js" type="module"></script>
+</body>
+</html>
