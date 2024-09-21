@@ -1,3 +1,5 @@
 # Build info
 
 node_modules
+
+/data/firebase.js
