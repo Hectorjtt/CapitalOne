@@ -4,6 +4,7 @@ Welcome to the WiseCredit App repository! This project is an innovative financia
 
 ## Table of Contents
 - [About the Project](#about-the-project)
+- [Images](#screenshotsapp)
 - [Features](#features)
   - [User Features](#user-features)
   - [Admin Features](#admin-features)
@@ -24,6 +25,32 @@ Welcome to the WiseCredit App repository! This project is an innovative financia
 WiseCredit is an iOS financial application aimed at simplifying personal finance management while giving users the tools to make better-informed credit decisions. The app integrates features like real-time credit comparison, chatbot support, and notifications about changes in bank rates, all powered by Firebase for backend management and Google AI's generative models for smart assistance. Our focus is to provide an intuitive and user-friendly interface, offering relevant financial insights to help people manage their finances effectively.
 
 ---
+## screenshotsapp
+
+Here are some screenshots of the WiseCredit App:
+
+### SignUp
+![SignUp](./assets/SignUp-Image.jpeg)
+
+
+### Home Screen
+![Home Screen](./assets/Dasboard-Image.jpeg)
+
+### Credit Simulator
+![Credit Simulator](./assets/CreditSimulation-Image.jpeg)
+
+![Credit Results](./assets/Results-Image.jpeg)
+
+### Profile Management
+![Profile Management](./assets/Profile-Image.jpeg)
+
+### Chatbot AI
+![Chatbot AI](./assets/ChatbotAI-Image.jpeg)
+
+### Notifications
+![Notifications](./assets/Notifications-Image.jpeg)
+---
+
 
 ## Features
 
